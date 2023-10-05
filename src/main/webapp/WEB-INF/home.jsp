@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>home.jsp</title>
 <link rel="stylesheet" href="/css/cube.css">
+<link rel="icon" type="image/png" href="/favicon.png"/>
 <style type="text/css">
 	.menu{
 		position: fixed;
@@ -95,13 +96,13 @@
 		<li style="padding:5px 20px 0px 0px;">
 			<section class="perspective">
 				<article class="cube">
-					<div class="base">base</div>
-					<div class="base front">front</div>
-					<div class="base back">back</div>
-					<div class="base left">left</div>
-					<div class="base right">right</div>
-					<div class="base top">top</div>
-					<div class="base bottom">bottom</div>
+					<div class="base">Final</div>
+					<div class="base front"></div>
+					<div class="base back"></div>
+					<div class="base left"></div>
+					<div class="base right"></div>
+					<div class="base top"></div>
+					<div class="base bottom"></div>
 				</article>
 			</section>
 		</li>
