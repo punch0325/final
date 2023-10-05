@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#surface{
+	border-collapse: collapse;
+	font-family: monospace;
+	margin:auto;
+	font-size: 1.7em;
+	opacity: 50%;
+	color: white;
+	background-color: white;
+/*	border: 5px solid coral;*/
+	box-shadow: 20px 20px 10px rgb(0, 0, 0);
+}
+
+body{
+	background-image: url('/img/Cats.png');
+	background-size: cover;
+}
+
+div{
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 5px;
+}
+
+button{
+	font-family: fantasy;
+	padding: 7px;
+	font-size: 15pt;
+	width: 100px;
+}
