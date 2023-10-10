@@ -25,6 +25,11 @@ public class AniController {
 
 	}
 	
+	@GetMapping("/placeholder")
+	void placeholder() {
+
+	}
+	
 	@GetMapping("/fill")
 	void fill(Model model) {
 		log.info("fill()...");

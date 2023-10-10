@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <title>home.jsp</title>
 <link rel="stylesheet" href="/css/cube.css">
 <link rel="icon" type="image/png" href="/favicon.png"/>
@@ -79,9 +80,14 @@
 
 <script type="text/javascript">
 	//iframe 크기 조절을 위한 자바스크립트문
-	window.onload=function(){
-		setInterval(resize, 100)
-	}
+// 	window.onload=function(){
+// 		setInterval(resize, 100)
+// 	}
+	
+	// 위의 js문 대신 jquery문을 이용해본 것
+	$(document).ready(function() {
+		setInterval(resize, 100);
+	});
 	
 	function resize(){
 		let iframe = document.querySelector('iframe');
@@ -123,6 +129,7 @@
 				<li class="sub-menu-item"><a target="content" href="/ani/cross">cross</a></li>
 				<li class="sub-menu-item"><a target="content" href="/ani/race">race</a></li>
 				<li class="sub-menu-item"><a target="content" href="/ani/cube">cube</a></li>
+				<li class="sub-menu-item"><a target="content" href="/ani/placeholder">placeholder</a></li>
 			</ol>
 		</li>
 		<li class="menu-item">
