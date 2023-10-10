@@ -97,7 +97,7 @@ function clearBtn_click(e) {
 </script>
 </head>
 <body>
-<h1>Alpha Graphics</h1>
+<h1>Alpha Graphics(김은비)</h1>
 <hr>
 
 <button id="start" onclick="startBtn_click(event);">Start</button>
