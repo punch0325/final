@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+.collapse{
+	border-collapse: collapse;
+	font-family: monospace;
+}
+
+table:nth-of-type(1){
+	margin-bottom: 10px;
+}
+
+body{
+	height: 2000px;
+}
+
+#surface{
+	position: relative;
+}
+
+#surface td{
+	position: absolute;
+	transition: left 2s, top 2s, transform 2s;
+}
+
+#surface tr:last-child td:last-child{
+	box-shadow: 1px 1.5px 2px;
+}

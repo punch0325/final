@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 <title>home.jsp</title>
 <link rel="stylesheet" href="/css/cube.css">
-<link rel="icon" type="image/png" href="/favicon.png"/>
+<link rel="icon" type="image/png" href="img/favicon.png"/>
 <style type="text/css">
 	.menu{
 		position: fixed;
@@ -38,9 +39,13 @@
 		transition: max-height 2s; /*display는 트랜지션 효과가 안 먹기 때문에 max-height로 css 적용*/
 	}
 		
-	.menu-item:last-child{
+	.menu-item:nth-last-child(2){
 		margin-left : auto; /*login 메뉴를 화면을 줄거나 늘어나도 오른쪽에 붙어있도록 하기 위함*/
-		margin-right: 10px;
+		margin-right: -70px;
+		background-color: white;
+	}
+	.menu-item:nth-last-child(1){
+		background-color: white;
 	}
 	
 	.menu-title{
@@ -135,6 +140,7 @@
 		<li class="menu-item">
 			<div class="menu-title">React</div>
 			<ol class="sub-menu">
+				<li class="sub-menu-item"><a href="/cafe.jsp">cafe</a></li>
 				<li class="sub-menu-item"><a target="content" href="/fill.jsp">fill</a></li>
 				<li class="sub-menu-item"><a target="content" href="/cross.jsp">cross</a></li>
 				<li class="sub-menu-item"><a target="content" href="/race.jsp">race</a></li>
@@ -157,9 +163,24 @@
 				<li class="sub-menu-item"><a target="content" href="/search">search</a></li>
 			</ol>
 		</li>
-		<li class="menu-item">
-			<div class="menu-title">LOGIN</div>
-		</li>
+		<sec:authorize access="isAnonymous()">
+			<li class="menu-item">
+				<div class="menu-title"><a style="color: black; font-size: 0.7em;" href="/login">LOGIN</a></div>
+			</li>
+			<li class="menu-item">
+				<div class="menu-title"><a style="color: black; font-size: 0.7em;"href="/resister">RESISTER</a></div>
+			</li>
+		</sec:authorize>
+		<sec:authorize access="isAuthenticated()">
+			<li class="menu-item">
+				<div class="menu-title"><a style="color: black; font-size: 0.7em;" href="/logout">LOGOUT</a></div>
+			</li>
+			<li class="menu-item">
+				<div class="menu-title">
+					<a style="color: black; font-size: 0.7em; text-decoration: none;" href="#"><sec:authentication property="name"/>님</a>
+				</div>
+			</li>
+		</sec:authorize>
 	</ul>
 </nav>
 

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Skranji:wght@700&display=swap');
+	
+	body{
+		margin: 0px;
+	}
+	
+	.header{
+		background: Gold;
+		text-align: center;
+		position: relative;
+		border-bottom: 2px solid saddlebrown;
+	}
+	
+	.logo{
+		margin: 10px 10px 0px 0px;
+		filter: opacity(0.5) drop-shadow(0 0 0 brown);
+/* 		border: 1px solid black; */
+	}
+	
+	.poster{
+		margin-top: -3px;
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+	}
+	
+	.poster img{
+		width: 100%;
+  		height: auto;
+  		display: block;
+	}
+	
+	.cafe-name{
+		font-size:35pt;
+		font-family: 'Bagel Fat One', cursive;
+		filter: opacity(0.5) drop-shadow(0 0 0 brown);
+/* 		border: 1px solid black; */
+		display:inline-block;
+		position: relative;
+		top: -15px;
+	}
+
+	nav{
+
+	}

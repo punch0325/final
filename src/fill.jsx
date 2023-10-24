@@ -4,6 +4,26 @@ import Alpha from './util/alpha.js';
 import "./css/fill.css"
 import sleep from "es7-sleep"
 
+class Fill extends Alpha{
+	left = 0;
+	top = 0;
+	
+	constructor(){
+		super();
+		this.init();
+	}
+	
+	init(){
+		this.left = parseInt(Math.random()*500+400);
+		this.top =100; //parseInt(Math.random());
+	}
+	
+	clear(){
+		this.left=0;
+		this.top=0;
+	}
+}
+
 class App extends React.Component {
 	
 	constructor() {
@@ -12,11 +32,12 @@ class App extends React.Component {
 			this.state.surface[i] = [];
 			for (let j=0; j<40; j++) {
 				let alpha = new Alpha();
-				alpha.fg = 'black';
-				alpha.bg = 'black';
+//				alpha.fg = 'black';
+//				alpha.bg = 'black';
 				this.state.surface[i][j] = alpha;
 			}
 		}
+		this.init();
 		console.log(this.state.surface);
 	}
 	
@@ -30,13 +51,14 @@ class App extends React.Component {
 	
 	async fill(){
 		for(;;){			
-			let alpha = new Alpha();
+			let alpha = new Fill();
 			let a = this.state.surface[alpha.line-1][alpha.column-1]
 			
 			if(a.fg == 'black' && a.bg == 'black'){
 				this.state.count++;
+				alpha.clear();
+				this.state.surface[alpha.line-1][alpha.column-1] = alpha;
 			}
-			this.state.surface[alpha.line-1][alpha.column-1] = alpha;
 			this.state.forCount++;
 			this.forceUpdate();
 			
@@ -65,6 +87,7 @@ class App extends React.Component {
 	
 	btnCreate_click(e) {
 		this.state.disabled = true;
+		this.init();
 		this.forceUpdate();
 		
 		for(let i=0; i<20; i++){
@@ -103,7 +126,7 @@ class App extends React.Component {
 					</tr>
 				</tbody>
 			</table>
-			<table className='collapse'
+			<table className='collapse' id='surface'
 					onMouseDown={event => event.preventDefault()}
 					onContextMenu={event => event.preventDefault()}>
 				<tbody>
@@ -112,7 +135,11 @@ class App extends React.Component {
 						<tr key={k}>
 							{
 								row.map((v, k) => 
-									<td style={{color: v.fg, background: v.bg}} key={k}>{v.ch}</td>
+									<td style={{color: v.fg, 
+															background: v.bg,
+															left: v.letf,
+															top: v.top
+														 }} key={k}>{v.ch}</td>
 								)
 							}
 						</tr>
