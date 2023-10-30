@@ -4,7 +4,8 @@ module.exports = {
         fill: "./src/fill.jsx",
         sort: "./src/sort.jsx",
         move: "./src/move.jsx",
-        cafe: "./src/cafe.jsx"
+        cafe: "./src/cafe.jsx",
+        dept: "./src/dept/app.jsx"
     },
     output: {
         filename: "[name].js",

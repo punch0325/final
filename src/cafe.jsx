@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./css/cafe.css"
+
+
+
 //import $ from "jquery"
 
 
@@ -19,6 +22,11 @@ class Cafe extends React.Component {
 					<img className='logo' src="img/cafe.png" height="60px"/>
 					<div className="cafe-name">
 						<span>달 달 커 피 다 방</span>
+					</div>
+					<div className='member'>
+						<span><a href='#'>Shop </a> |</span>				
+						<span><a href='#'> Join</a> |</span>
+						<span><a href='/login'> Login</a></span>
 					</div>
 				</div>
 				

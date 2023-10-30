@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+table{
+	width: 800px;
+	border-collapse: collapse;
+	border-color: pink;
+}
+
+td:nth-last-of-type(2){
+	border:none;
+}
+
+td:nth-last-of-type(1){
+	border:none;
+}
+
+
+
+
+form {
+	width: 800px;
+	margin: auto;
+}
+
+fieldset {
+	padding: 20px;
+	margin: 20px;
+}
+
+input {
+	padding: 10px;
+}
