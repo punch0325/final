@@ -1,9 +1,13 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Skranji:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1&display=swap');	
 	
+/* header css*/	
 	body{
 		margin: 0px;
+		padding: 0px;
+		background: Gold;
 	}
 	
 	.header{
@@ -23,7 +27,6 @@
 		font-size:35pt;
 		font-family: 'Bagel Fat One', cursive;
 		filter: opacity(0.5) drop-shadow(0 0 0 brown);
-/* 		border: 1px solid black; */
 		display:inline-block;
 		position: relative;
 		top: -15px;
@@ -48,18 +51,115 @@
 		color: white;
 	}
 		
-	.poster{
-		margin-top: -3px;
-		width: 100%;
-		height: auto;
-		overflow: hidden;
-	}
+/*	.poster{*/
+/*		margin-top: -3px;*/
+/*		width: 100%;*/
+/*		height: auto;*/
+/*		overflow: hidden;*/
+/*	}*/
 	
 	.poster img{
 		width: 100%;
-  		height: auto;
-  		display: block;
+		padding: 0px;
+		margin:opx;
+		border-bottom: 2px solid saddlebrown;
+/*  		height: auto;*/
+/*  		display: block;*/
 	}
 	
+	
+	
+	
+	
+/*메뉴 바 css */	
+	nav{
+		position: relative;
+	}
+	
+	.menu{
+		font-family: 'Gothic A1', sans-serif;
+		text-align: center;
+		font-weight: bold;
+		list-style: none;
+		position: absolute;
+		width: 90%;
+		left: 50%;
+		transform: translateX(-48.9%);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start; 
+		/*flex를 주면 자동적으로 해당 영역의 수직 크기를 맞춰주는데,
+			이걸 각 크기별로 다르게 해주고 싶으면 align-items 속성을 사용*/
+	}
+	
+	.menu-item{
+		width: 404px;
+		flex-shrink: 0;
+		padding: opx;
+		margin:0px;
+		background-color: rgb(255, 255, 255);
+		
+	}
+	
+	.menu-item:hover > .menu-title{
+		text-decoration: underline;
+	}
+	
+	.menu-item:hover > .sub-menu{
+		max-height: 500px;  /*최대로 늘어날 수 있는 height의 값을 지정*/
+		transition: max-height 2s; /*display는 트랜지션 효과가 안 먹기 때문에 max-height로 css 적용*/
+	}
+		
+	
+	@media screen and (min-width: 800px) {
+		.menu-title{
+			padding : 10px;
+			font-size: 15pt;
+			text-align: center;
+			background-color: rgb(255, 255, 255);
+		}
+	}
 
+	
+	
+	.sub-menu{
+		max-height: 0px;
+		overflow: hidden;
+		list-style: none;
+		padding: 0;
+	}
+	
+	.sub-menu-item > a{
+		padding: 10px;
+		display: block;
+		font-size: 10pt;
+		text-decoration: none;
+		color: black;
+	}
+	
+	.sub-menu-item:hover > a{
+		font-size: 13pt;
+	}
+
+	iframe{
+		margin-top: 100px;
+	}
+	
+	
+	
+	
+
+	
+	footer{
+		font-family: 'Gowun Dodum', sans-serif;
+		width: 100%;
+		height: 150px; /* 내용물에 따라 알맞는 값 설정 */
+		bottom: 0px;
+		position: relative;
+		
+		background: gray;
+		color: white;
+		text-align: center;
+		padding-top: 10px;
+	}
 

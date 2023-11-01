@@ -8,7 +8,8 @@
 <title>login.jsp</title>
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Skranji:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1&display=swap');
 
 body{
 		margin: 0px;
@@ -69,21 +70,61 @@ body{
 
 	.login{
 		width:750px;
-		height: 500px;
-/* 		border: 1px solid black; */
+		height: 300px;
 		position: relative;
 		margin: 0 auto;
-		top: 70px;
+		top: 30px;
+  		text-align: center;
+	}
+	
+	.login-word{
+		padding-top: 30px;
+		text-align: center;
+		font-family: 'Gowun Dodum', sans-serif;
+		font-size: 50pt;
+		font-weight: bold;
+	}
+	
+	hr{
+		width: 500px;
+	}
+	
+	
+	#id, #pw{
+		font-family: 'Noto Sans KR', sans-serif;
+		border: 1px solid #FBEBD5;
+		width: 400px;
+		height: 50px;
+		border-radius: 20px;
+		margin: 20px;
+		text-align: center;
+	}
+	
+	#submit{
+		background: #FBEBD5;
+		border: 1px solid #FBEBD5;
+		color: black;
+		width: 403px;
+		height: 50px;
+		border-radius: 20px;
 		
-/* 		background-color: white; */
-/* 		opacity: 0.5; */
+		margin: 20px;
+		
+		font-family: 'Gothic A1', sans-serif;
+		font-weight: bold;
+		font-size: 13pt;
+	}
+	
+	#submit:hover{
+		background: #694028;
+		color: white;
 	}
 	
 	#wrap {
-    min-height: 95vh;
-    position: relative;
-    width: 100%;
-}
+	    min-height: 95vh;
+	    position: relative;
+	    width: 100%;
+	}
 	
 	footer{
 		font-family: 'Gowun Dodum', sans-serif;
@@ -117,20 +158,18 @@ body{
 	<c:if test="${param.error == ''}">
 		<span>아이디와 비밀번호가 틀렸습니다.</span>
 	</c:if>
+	<div class="login-word">
+		<span>LOG-IN</span>
+	</div>
+	<hr/>
 	<div class="login">
 		<form action="/login" method="post">
-			<fieldset>
-				<legend><label for="id">ID</label></legend>
-				<input id="id" name="username"/>
-			</fieldset>
-			<fieldset>
-				<legend><label for="pw">PW</label></legend>
-				<input id="pw" type="password" name="password"/>
-			</fieldset>
+			<input id="id" name="username" placeholder=" 아이디를 입력하세요."/><br/>
+			<input id="pw" type="password" name="password" placeholder=" 비밀번호를 입력하세요."/>
 	<!-- id와 pw의 name값은 security와 연동을 위해 디폴트인 username/password로 지정해주어야 한다.
 			 이걸 바꾸고 싶으면 security 설정 클래스에서 메소드를 이용해 바꾸어 줄 수 있음 -->
 			 <div>
-				 <input type="submit" value="로그인">
+				 <input id="submit" type="submit" value="로   그   인" >
 			 </div>
 		</form>
 	</div>

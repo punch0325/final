@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/*https://narup.tistory.com/210*/
+
+
+section{
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;	
+	
+	position: relative;
+	left: 50%;
+	transform: translateX(-48%);
+}
+
+img{
+	border: 1px solid black;
+	width: 400px;
+	margin: -1px 1px 0px 1px;
+	background-color: rgb(255, 255, 255);
+}
